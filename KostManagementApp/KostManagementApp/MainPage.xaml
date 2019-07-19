@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="KostManagementApp.MainPage"
+             Title="Kost Management App">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh"
+                     Clicked="Refresh_Clicked" />
+        <ToolbarItem Text="+"
+                     x:Name="AddKostMenu"
+                     Clicked="AddKostMenu_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <ListView x:Name="listKosts"
+              HasUnevenRows="true"
+              ItemSelected="OnListKostsItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="2"
+                           Source="{Binding Kost.ImageUrl}"
+                           Aspect="AspectFill"
+                           HeightRequest="60"
+                           WidthRequest="60" />
+                        <Label Grid.Column="1"
+                           Text="{Binding Kost.Name}"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"/>
+                        <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding Kost.Address}"
+                           VerticalOptions="Center" />
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>

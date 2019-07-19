@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="KostManagementApp.KostDetailPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text="Image"
+                       FontAttributes="Bold"
+                       Margin="0,10,0,0"/>
+                <Image Source="{Binding Kost.ImageUrl}"
+                       HeightRequest="200" />
+
+                <Label Text="Name"
+                       FontAttributes="Bold" />
+                <Label Text="{Binding Kost.Name}" />
+
+                <Label Text="Address"
+                       FontAttributes="Bold" />
+                <Label Text="{Binding Kost.Address}" />
+
+                <Label Text="Description"
+                       FontAttributes="Bold" />
+                <Label Text="{Binding Kost.Description}" />
+
+                <Label Text="Rooms"
+                       FontAttributes="Bold" />
+                <Label Text="{Binding Kost.Rooms}" />
+
+                <Label Text="Owner Name"
+                       FontAttributes="Bold" />
+                <Label Text="{Binding Kost.OwnerName}" />
+
+                <Label Text="Owner Phone Number"
+                       FontAttributes="Bold" />
+                <Label Text="{Binding Kost.OwnerPhoneNumber}" />
+
+                <Button Text="Delete"
+                        BackgroundColor="Red"
+                        TextColor="White"
+                        Clicked="ButtonDelete_Clicked"
+                        HeightRequest="40"
+                        Margin="0,10,0,20"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

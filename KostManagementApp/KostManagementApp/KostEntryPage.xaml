@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="KostManagementApp.KostEntryPage"
+             Title="Kost Data">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20"
+                         x:Name="KostEntryLayout">
+                <Image x:Name="InputPhoto" HeightRequest="200"></Image>
+                <Button x:Name="PickPhoto" Text="Pick" Clicked="PickPhoto_Clicked"></Button>
+                <Button x:Name="ButtonDeleteImage"
+                        Text="Delete Image" 
+                        Clicked="ButtonDeleteImage_Clicked"
+                        BackgroundColor="Red"
+                        TextColor="White"
+                        HeightRequest="40"/>
+                
+                <Entry x:Name="InputName" 
+                       Placeholder="Name"
+                       Text="{Binding Kost.Name}"
+                       PlaceholderColor="Gray"/>
+                <Entry x:Name="InputAddress"
+                       Placeholder="Address" 
+                       Text="{Binding Kost.Address}"
+                       PlaceholderColor="Gray"/>
+                <Entry x:Name="InputDescription"
+                       Placeholder="Description" 
+                       Text="{Binding Kost.Description}"
+                       PlaceholderColor="Gray"/>
+                <Entry x:Name="InputRooms"
+                       Placeholder="Rooms" 
+                       Keyboard="Numeric"
+                       Text="{Binding Kost.Rooms}"
+                       PlaceholderColor="Gray"
+                       TextChanged="InputRooms_TextChanged"/>
+                <Entry x:Name="InputOwnerName"
+                       Placeholder="Owner Name" 
+                       Text="{Binding Kost.OwnerName}"
+                       PlaceholderColor="Gray"/>
+                <Entry x:Name="InputOwnerPhoneNumber"
+                       Placeholder="Owner Phone Number"
+                       Keyboard="Telephone" 
+                       Text="{Binding Kost.OwnerPhoneNumber}"
+                       PlaceholderColor="Gray"/>
+
+
+                <Grid x:Name="ButtonGrid"
+                      Margin="0,0,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="ButtonDelete"
+                            Text="Delete" 
+                            Clicked="ButtonDelete_Clicked"
+                            BackgroundColor="Red"
+                            TextColor="White"
+                            HeightRequest="40"/>
+
+                    <Button x:Name="ButtonSubmit"
+                            Grid.Column="1"
+                            Text="Submit" 
+                            Clicked="ButtonSubmit_Clicked"
+                            BackgroundColor="Green"
+                            TextColor="White"
+                            HeightRequest="40"/>
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
